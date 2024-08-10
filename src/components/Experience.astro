@@ -1,0 +1,26 @@
+---
+
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        title: "Pagina web para un coffee-bar, Punto Flash",
+        description:"Cree una pagina web responsive design con vanilla Javascript, HTML y CSS. Como tal constituye mi primer trabajo como programador y aunque quedo un poco basica, me siento orgulloso de haberla realizado pues afianzo mis conocimientos en desarrollo web hasta ese momento.",
+        data:"Desde Noviembre 2023 hasta Diciembre 2023",
+        link:"https://github.com/Criptamas/"
+    }
+]
+---
+
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">     
+    
+   { EXPERIENCE.map(experience=>(
+     <li class="mb-10 ms-4">
+    <ExperienceItem {...experience}/>
+    </li>
+   )
+   )}
+   
+ 
+</ol>

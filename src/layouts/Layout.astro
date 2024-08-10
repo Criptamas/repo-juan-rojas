@@ -1,0 +1,78 @@
+---
+
+import '@fontsource-variable/onest';
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props {
+	title: string
+	description: string
+
+}
+
+const { description,title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description}/>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/code-circle-2.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+			<!-- HTML Meta Tags -->
+	<title>Portafolio Juan Rojas Desarrollador FrontEnd y Programador Web</title>
+	<meta name="description" content="Curriculum de Juan Rojas. Programador en Javascript y Python. Manejo de ReactJS y Astro.">
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://mi-portafolio-sandy.vercel.app">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Portafolio Juan Rojas Desarrollador FrontEnd y Programador Web">
+	<meta property="og:description" content="Curriculum de Juan Rojas. Programador en Javascript y Python. Manejo de ReactJS y Astro.">
+	<meta property="og:image" content="https://raw.githubusercontent.com/Criptamas/miPortafolio/main/src/images/juanrojasomg.png">
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="mi-portafolio-sandy.vercel.app">
+	<meta property="twitter:url" content="https://mi-portafolio-sandy.vercel.app">
+	<meta name="twitter:title" content="Portafolio Juan Rojas Desarrollador FrontEnd y Programador Web">
+	<meta name="twitter:description" content="Curriculum de Juan Rojas. Programador en Javascript y Python. Manejo de ReactJS y Astro.">
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/Criptamas/miPortafolio/main/src/images/juanrojasomg.png">
+		<title>{title}</title>
+		<ViewTransitions/>
+	</head>
+	
+	<body class="relative h-full w-full bg-slate-950">
+		<div ><div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+		<Header />
+		<slot />
+
+		<Footer/>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	
+	}
+	html {
+		scroll-behavior: smooth ;
+		font-family: 'Onest Variable',system-ui, sans-serif;
+	}
+
+	body{
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html{
+			scroll-behavior: auto;
+		}
+	}
+</style>
