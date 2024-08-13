@@ -8,6 +8,7 @@ import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import WorkIcon from '../components/icons/WorkIcon.astro';
 import CodeIcon from '../components/icons/CodeIcon.astro';
+import CvIcon from '../components/icons/CvIcon.astro'
 import Proyectos from '../components/Proyectos.astro';
 import Perfilyo from '../components/icons/Perfilyo.astro';
 import SobreMi from '../components/SobreMi.astro';
@@ -22,7 +23,7 @@ description='Curriculum de Juan Rojas. Programador en Javascript y Python. Manej
 		<SectionContainer class="py-44 pb-22">
 			<img 
 			class="rounded-full size-12 mb-4"
-			src="https://raw.githubusercontent.com/Criptamas/Mi-portafolio/maste/src/images/juanrojas.png" alt="Juan Rojas foto">
+			src="/public/images/juanrojas.png" alt="Juan Rojas foto">
 		
 
 		<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hola Soy Juan Rojas <div class="flex justify-center items-center"> <a href="https://www.linkedin.com/in/criptamas/" rel="noreferrer" target="_blank"><Badge>Disponible para trabajar</Badge></a>  </div> </h1> 
@@ -37,9 +38,14 @@ description='Curriculum de Juan Rojas. Programador en Javascript y Python. Manej
 				<MailIcon class="size-4 md:size-6" /> Contactame
 			</Socialref>
 
-			<Socialref href="">
+			<Socialref href="https://www.linkedin.com/in/criptamas/">
 				<LinkedinIcon class="size-4 md:size-6"/> LinkedIn
 			</Socialref>
+
+			<Socialref download="frontend-juan-rojas.pdf" href="/public/files/frontend-juan-rojas.pdf">
+				<CvIcon class="size-4 md:size-6"/> Hoja de vida
+			</Socialref>
+			
 	
 	
 		</nav>
