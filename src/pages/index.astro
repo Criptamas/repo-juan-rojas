@@ -4,14 +4,13 @@ import Badge from '../components/Badge.astro'
 import LinkedinIcon from '../components/icons/LinkedinIcon.astro';
 import MailIcon from '../components/icons/MailIcon.astro';
 import Socialref from '../components/Socialref.astro';
-import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
-import WorkIcon from '../components/icons/WorkIcon.astro';
 import CodeIcon from '../components/icons/CodeIcon.astro';
 import CvIcon from '../components/icons/CvIcon.astro'
 import Proyectos from '../components/Proyectos.astro';
 import Perfilyo from '../components/icons/Perfilyo.astro';
 import SobreMi from '../components/SobreMi.astro';
+import Formacion from '../components/Formacion.astro';
 ---
 
 <Layout 
@@ -20,7 +19,7 @@ description='Curriculum de Juan Rojas. Programador en Javascript y Python. Manej
 >
 	<main class="px-4">
 		
-		<SectionContainer class="py-44 pb-22">
+		<SectionContainer class="py-20 pb-22">
 			<img 
 			class="rounded-full size-12 mb-4"
 			src="https://avatars.githubusercontent.com/u/113388558?v=4" alt="Juan Rojas foto">
@@ -30,7 +29,7 @@ description='Curriculum de Juan Rojas. Programador en Javascript y Python. Manej
 		<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
 
 			<span> 
-				Junior Web Developer ReactJS. </span><span class="text-orange-200/90"> Manejo de Frameworks como ReactJS. </span>  <span class="text-red-200/95"> Soy de Venezuela, Estado Falcon </span>. <span class="opacity-80">Me gusta planear y crear proyectos que beneficien a mi comunidad.</span>
+				Junior Web Developer ReactJS. </span><span class="text-orange-200/90"> Tengo solidos conocimientos en semantica WEB HTML & CSS. </span>  <span class="text-red-200/95"> Soy Venezolano. </span> <span class="opacity-80"> Estoy listo para arrancar a crear productos de alto impacto💥</span>
 		</h2>
 	
 		<nav class="flex gap-4 mt-8 flex-wrap">
@@ -51,20 +50,22 @@ description='Curriculum de Juan Rojas. Programador en Javascript y Python. Manej
 		</nav>
 
 		</SectionContainer>
-	<!--EXPERIENCIA -->
-	<SectionContainer id="experiencia">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
-			<WorkIcon class="size-8"/>
-			Mi experiencia laboral </h2>
-	<Experience/>
-	</SectionContainer>
-	<!--PROYECTOS -->
+
+		
+	<!-- PORTAFOLIO -->
 	<SectionContainer id="proyectos">
 		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
 			<CodeIcon />
-			Mis proyectos </h2>
-	<Proyectos/>
+			Portafolio </h2>
+	<Formacion/>
 	</SectionContainer>
+
+		<!-- PROYECTOS -->
+		<SectionContainer>
+		<Proyectos/>
+		</SectionContainer>
+	
+
 		<!--SOBRE MI -->
 	<SectionContainer id="sobre-mi">
 		<h2
