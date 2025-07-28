@@ -1,0 +1,32 @@
+
+<button id="lang-btn" class="px-4 py-2">
+  🌐 ES
+</button>
+
+<script is:inline>
+  // aplica el idioma guardado de  la página
+  const savedLang = localStorage.getItem("lang") || "es";
+  document.documentElement.lang = savedLang;
+  const btn = document.getElementById("lang-btn");
+  btn.textContent = savedLang === "es" ? "🌐 EN" : "🌐 ES";
+</script>
+
+<script type="module" >
+  // cambio
+  const btn = document.getElementById("lang-btn");
+  btn.addEventListener("click", () => {
+    // switch entre 'es' y 'en'
+    const current = document.documentElement.lang || "es";
+    const next = current === "es" ? "en" : "es";
+    localStorage.setItem("lang", next);
+    document.documentElement.lang = next;
+
+    // Actualiza el texto del botón
+    btn.textContent = next === "es" ? "🌐 EN" : "🌐 ES";
+
+    // rutas /es/ y /en/, redirige:
+    const path = window.location.pathname;
+    const newPath = path.replace(/^\/(es|en)/, `/${next}`);
+    window.location.pathname = newPath;
+  });
+</script>
