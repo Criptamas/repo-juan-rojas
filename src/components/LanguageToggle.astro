@@ -1,32 +1,30 @@
+<button id="lang-btn" class="px-4 py-2">🌐 ES</button>
 
-<button id="lang-btn" class="px-4 py-2">
-  🌐 ES
-</button>
-
-<script is:inline>
-  // aplica el idioma guardado de  la página
-  const savedLang = localStorage.getItem("lang") || "es";
-  document.documentElement.lang = savedLang;
+<script is:inline type="module">
   const btn = document.getElementById("lang-btn");
-  btn.textContent = savedLang === "es" ? "🌐 EN" : "🌐 ES";
-</script>
 
-<script type="module" >
-  // cambio
-  const btn = document.getElementById("lang-btn");
-  btn.addEventListener("click", () => {
-    // switch entre 'es' y 'en'
-    const current = document.documentElement.lang || "es";
-    const next = current === "es" ? "en" : "es";
-    localStorage.setItem("lang", next);
-    document.documentElement.lang = next;
+  // 1) Detecta el idioma actual desde cookie (fallback ES)
+  function getCookieLang() {
+    const m = document.cookie.match(/(?:^|;\s*)lang=(es|en)(?:;|$)/);
+    return m ? m[1] : 'es';
+  }
 
-    // Actualiza el texto del botón
-    btn.textContent = next === "es" ? "🌐 EN" : "🌐 ES";
+  // 2) Guarda cookie y redirige
+  function switchLang(next) {
+    document.cookie = `lang=${next}; path=/; max-age=${60*60*24*365}`;
+    // construye la nueva ruta sin duplicar segmento
+    const tail = window.location.pathname.replace(/^\/(es|en)/, '');
+    window.location.href = `/${next}${tail}`;
+  }
 
-    // rutas /es/ y /en/, redirige:
-    const path = window.location.pathname;
-    const newPath = path.replace(/^\/(es|en)/, `/${next}`);
-    window.location.pathname = newPath;
+  // 3) Estado y UI
+  let current = getCookieLang();
+  document.documentElement.lang = current;
+  btn.textContent = current === 'es' ? '🌐 EN' : '🌐 ES';
+
+  // 4) Listener
+  btn.addEventListener('click', () => {
+    const next = current === 'es' ? 'en' : 'es';
+    switchLang(next);
   });
 </script>
