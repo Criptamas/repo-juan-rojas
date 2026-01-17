@@ -1,0 +1,30 @@
+<button id="lang-btn" class="px-4 py-2">🌐 ES</button>
+
+<script is:inline type="module">
+  const btn = document.getElementById("lang-btn");
+
+  // 1) Detecta el idioma actual desde cookie (fallback ES)
+  function getCookieLang() {
+    const m = document.cookie.match(/(?:^|;\s*)lang=(es|en)(?:;|$)/);
+    return m ? m[1] : 'es';
+  }
+
+  // 2) Guarda cookie y redirige
+  function switchLang(next) {
+    document.cookie = `lang=${next}; path=/; max-age=${60*60*24*365}`;
+    // construye la nueva ruta sin duplicar segmento
+    const tail = window.location.pathname.replace(/^\/(es|en)/, '');
+    window.location.href = `/${next}${tail}`;
+  }
+
+  // 3) Estado y UI
+  let current = getCookieLang();
+  document.documentElement.lang = current;
+  btn.textContent = current === 'es' ? '🌐 EN' : '🌐 ES';
+
+  // 4) Listener
+  btn.addEventListener('click', () => {
+    const next = current === 'es' ? 'en' : 'es';
+    switchLang(next);
+  });
+</script>

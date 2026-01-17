@@ -1,83 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro'
-import LinkedinIcon from '../components/icons/LinkedinIcon.astro';
-import MailIcon from '../components/icons/MailIcon.astro';
-import Socialref from '../components/Socialref.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import CodeIcon from '../components/icons/CodeIcon.astro';
-import CvIcon from '../components/icons/CvIcon.astro'
-import Proyectos from '../components/Proyectos.astro';
-import Perfilyo from '../components/icons/Perfilyo.astro';
-import SobreMi from '../components/SobreMi.astro';
-import Formacion from '../components/Formacion.astro';
----
+--- 
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirigiendo…</title>
+    <script is:inline>
+      const saved = localStorage.getItem('lang');
+      const defaultLang = navigator.language.startsWith('en') ? 'en' : 'es';
+      const lang = saved || defaultLang;
+      window.location.replace(`/${lang}/`);
+    </script>
+  </head>
+  <body>
 
-<Layout 
-title="Portafolio Juan Rojas Desarrollador y Programador Web"
-description='Curriculum de Juan Rojas. Programador en Javascript y Python. Manejo de ReactJS y Astro.'
->
-	<main class="px-4">
-		
-		<SectionContainer class="py-20 pb-22">
-			<img 
-			class="rounded-full size-12 mb-4"
-			src="https://avatars.githubusercontent.com/u/113388558?v=4" alt="Juan Rojas foto">
-		
-
-		<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hola Soy Juan Rojas <div class="flex justify-center items-center"> <a href="https://www.linkedin.com/in/criptamas/" rel="noreferrer" target="_blank"><Badge>Disponible para trabajar</Badge></a>  </div> </h1> 
-		<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
-
-			<span> 
-				Junior Web Developer ReactJS. </span><span class="text-orange-200/90"> Tengo solidos conocimientos en semantica WEB HTML & CSS. </span>  <span class="text-red-200/95"> Soy Venezolano. </span> <span class="opacity-80"> Estoy listo para arrancar a crear productos de alto impacto💥</span>
-		</h2>
-	
-		<nav class="flex gap-4 mt-8 flex-wrap">
-			<Socialref href="mailto:criptamas@gmail.com">
-				<MailIcon class="size-4 md:size-6" /> Contactame
-			</Socialref>
-
-			<Socialref href="https://www.linkedin.com/in/criptamas/">
-				<LinkedinIcon class="size-4 md:size-6"/> LinkedIn
-			</Socialref>
-
-			<Socialref download="frontend-juan-rojas.pdf" href="/files/mi-hoja-de-vida.pdf">
-				<CvIcon class="size-4 md:size-6"/> Hoja de vida
-			</Socialref>
-			
-	
-	
-		</nav>
-
-		</SectionContainer>
-
-		
-	<!-- PORTAFOLIO -->
-	<SectionContainer id="proyectos">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
-			<CodeIcon />
-			Portafolio </h2>
-	<Formacion/>
-	</SectionContainer>
-
-		<!-- PROYECTOS -->
-		<SectionContainer>
-		<Proyectos/>
-		</SectionContainer>
-	
-
-		<!--SOBRE MI -->
-	<SectionContainer id="sobre-mi">
-		<h2
-		  class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-		>
-		  <Perfilyo class="size-8" />
-		  Sobre mí
-		</h2>
-		<SobreMi/>
-	  </SectionContainer>
-</main>
-</main>
-</Layout>
-
-
+  </body>
+</html>
